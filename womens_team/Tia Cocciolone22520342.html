@@ -3,29 +3,30 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Get your own FontAwesome ID -->
-       <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
+      <!-- Get your own FontAwesome ID -->
+      <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
 
-      <link rel = "stylesheet" href = "css/reset.css">
-      <link rel = "stylesheet" href = "css/style.css">
-      
+      <link rel = "stylesheet" href = "../css/style.css">
+      <link rel = "stylesheet" href = "../css/style.css">
 
       <title>Tia Cocciolone</title>
    </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
    <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="mens.html">Men's Team</a></li>
-        <li><a href="womens.html">Women's Team</a></li>
-     </ul>
+      <ul>
+         <li><a href="../index.html">Home Page</a></li>
+         <li><a href="mens.html">Men's Team</a></li>
+         <li><a href="womens.html">Women's Team</a></li>
+      </ul>
    </nav>
    <header>
-      <!--Athlete would input headshot-->
-       <h1>Tia Cocciolone</h1>
-      <img src="../images/profiles/22520342.jpg" alt="Athlete headshot" width="200"> 
+      <div class="header-container">
+         <!--Athlete would input headshot-->
+         <h1>Tia Cocciolone</h1>
+         <img src="../images/profiles/22520342.jpg" alt="Athlete headshot" width="200"> 
+      </div>
    </header>
    <main id = "main">
       <section id= "athlete-sr-table">
@@ -42,21 +43,22 @@
                      <tr>
                         <td>10</td>
                         <td>22:22.8PR</td>
-                     </tr>                  
+                     </tr>
                
                      <tr>
                         <td>11</td>
                         <td>22:45.6</td>
-                     </tr>                  
-                                  
+                     </tr>
+               
                 </tbody>
                   </table>
                      </section>
 
-                        <h2>Race Results</h2>
+                     <details>
+                        <summary>Race Results</summary>
 
                         <section id="athlete-result-table">
-                           
+
 
                            <table id="athlete-table">
                               <thead>
@@ -71,129 +73,130 @@
                               <tbody>
                   
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/235827">37th Early Bird Open (HS Open 5K)</a>
                                     </td>
-                                    <td>23:42.1</td>
-                                    <td>47 </td>
-                                     <td>Nice work! By the way, you know this is a race, not a scenic tour, right?</td>
+                                    <td data-label="Time">23:42.1</td>
+                                    <td data-label="Place">47 </td>
+                                    <td data-label="Comments">Nice work! By the way, you know this is a race, not a scenic tour, right?</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236875">Bret Clements Bath Invitational (Class 1)</a>
                                     </td>
-                                    <td>22:45.6 SR</td>
-                                    <td>67 </td>
-                                     <td></td>
+                                    <td data-label="Time">22:45.6 SR</td>
+                                    <td data-label="Place">67 </td>
+                                    <td data-label="Comments"></td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/238311">SEC Jamboree #1 (Junior Varsity)</a>
                                     </td>
-                                    <td></td>
-                                    <td>-- </td>
-                                     <td></td>
+                                    <td data-label="Time"></td>
+                                    <td data-label="Place">-- </td>
+                                    <td data-label="Comments"></td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236072">56th Holly-Duane Raffin Festival of Races (D1 JV Girls)</a>
                                     </td>
-                                    <td>23:10.6</td>
-                                    <td>9 </td>
-                                     <td></td>
+                                    <td data-label="Time">23:10.6</td>
+                                    <td data-label="Place">9 </td>
+                                    <td data-label="Comments"></td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236877">Jackson Invitational (Orange Division (1000 + enrolment))</a>
                                     </td>
-                                    <td>23:14.9</td>
-                                    <td>210 </td>
-                                     <td>That was a great race! Next time, try running *on* the path though.</td>
+                                    <td data-label="Time">23:14.9</td>
+                                    <td data-label="Place">210 </td>
+                                    <td data-label="Comments">That was a great race! Next time, try running *on* the path though.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/238857">SEC-HS Jamboree #2 (Red) (Reserve Girls)</a>
                                     </td>
-                                    <td>28:54.4</td>
-                                    <td>76 </td>
-                                     <td>Your speed was impressive, but next time, try not to leave the spectators in the dust... literally!</td>
+                                    <td data-label="Time">28:54.4</td>
+                                    <td data-label="Place">76 </td>
+                                    <td data-label="Comments">Your speed was impressive, but next time, try not to leave the spectators in the dust... literally!</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/223660">Early Bird Open (Open Women's 5K)</a>
                                     </td>
-                                    <td>23:56.5</td>
-                                    <td>35 </td>
-                                     <td>Way to stay focused during the race! Keep that mindset for the next one.</td>
+                                    <td data-label="Time">23:56.5</td>
+                                    <td data-label="Place">35 </td>
+                                    <td data-label="Comments">Way to stay focused during the race! Keep that mindset for the next one.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/221764">SEC-HS Jamboree 1 (All Division Reserve GIRLS)</a>
                                     </td>
-                                    <td>23:58.7</td>
-                                    <td>23 </td>
-                                     <td>Excellent job maintaining a steady pace!</td>
+                                    <td data-label="Time">23:58.7</td>
+                                    <td data-label="Place">23 </td>
+                                    <td data-label="Comments">Excellent job maintaining a steady pace!</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/222702">SEC Jamboree 2 (Red) (Reserve Wave 1 (<25:30))</a>
                                     </td>
-                                    <td>22:30.0</td>
-                                    <td>18 </td>
-                                     <td>Well, you didn’t set a world record, but you definitely set a team snack record!</td>
+                                    <td data-label="Time">22:30.0</td>
+                                    <td data-label="Place">18 </td>
+                                    <td data-label="Comments">Well, you didn’t set a world record, but you definitely set a team snack record!</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/221793">2023 Portage XC Invitational (Division 1 Reserve)</a>
                                     </td>
-                                    <td>22:22.8PR</td>
-                                    <td>65 </td>
-                                     <td>Great run! If only we could bottle that energy for Monday mornings.</td>
+                                    <td data-label="Time">22:22.8PR</td>
+                                    <td data-label="Place">65 </td>
+                                    <td data-label="Comments">Great run! If only we could bottle that energy for Monday mornings.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/221531">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</a>
                                     </td>
-                                    <td>23:54.7</td>
-                                    <td>98 </td>
-                                     <td>Great effort out there! Keep pushing yourself at the next meet.</td>
+                                    <td data-label="Time">23:54.7</td>
+                                    <td data-label="Place">98 </td>
+                                    <td data-label="Comments">Great effort out there! Keep pushing yourself at the next meet.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/221762">SEC HS Championship (All Division Reserve)</a>
                                     </td>
-                                    <td>23:26.0</td>
-                                    <td>34 </td>
-                                     <td>Way to stay focused during the race! Keep that mindset for the next one.</td>
+                                    <td data-label="Time">23:26.0</td>
+                                    <td data-label="Place">34 </td>
+                                    <td data-label="Comments">Way to stay focused during the race! Keep that mindset for the next one.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/229906">Post Regional Open Meet (PROM) - Springfiled Oaks</a>
                                     </td>
-                                    <td>24:03.1</td>
-                                    <td>35 </td>
-                                     <td>You really pushed hard in that final mile, awesome finish!</td>
+                                    <td data-label="Time">24:03.1</td>
+                                    <td data-label="Place">35 </td>
+                                    <td data-label="Comments">You really pushed hard in that final mile, awesome finish!</td>
                                  </tr>
       
                               </tbody>
 
                         </table>
                      </section>
+                     </details>
                      <section id = "gallery">
                      <h2>Gallery</h2>
-                      </section>
+                     </section>
                      </main>
                      <footer>
                      <p>
@@ -203,7 +206,7 @@
                      Ann Arbor, MI 48103<br><br>
 
                      <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
+                     Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
 
 
                      </footer>

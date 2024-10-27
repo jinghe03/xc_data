@@ -3,29 +3,30 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Get your own FontAwesome ID -->
-       <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
+      <!-- Get your own FontAwesome ID -->
+      <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
 
-      <link rel = "stylesheet" href = "css/reset.css">
-      <link rel = "stylesheet" href = "css/style.css">
-      
+      <link rel = "stylesheet" href = "../css/style.css">
+      <link rel = "stylesheet" href = "../css/style.css">
 
       <title>Lila Edison</title>
    </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
    <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="mens.html">Men's Team</a></li>
-        <li><a href="womens.html">Women's Team</a></li>
-     </ul>
+      <ul>
+         <li><a href="../index.html">Home Page</a></li>
+         <li><a href="mens.html">Men's Team</a></li>
+         <li><a href="womens.html">Women's Team</a></li>
+      </ul>
    </nav>
    <header>
-      <!--Athlete would input headshot-->
-       <h1>Lila Edison</h1>
-      <img src="../images/profiles/23349671.jpg" alt="Athlete headshot" width="200"> 
+      <div class="header-container">
+         <!--Athlete would input headshot-->
+         <h1>Lila Edison</h1>
+         <img src="../images/profiles/23349671.jpg" alt="Athlete headshot" width="200"> 
+      </div>
    </header>
    <main id = "main">
       <section id= "athlete-sr-table">
@@ -42,16 +43,17 @@
                      <tr>
                         <td>9</td>
                         <td>20:46.2PR</td>
-                     </tr>                  
-                                  
+                     </tr>
+               
                 </tbody>
                   </table>
                      </section>
 
-                        <h2>Race Results</h2>
+                     <details>
+                        <summary>Race Results</summary>
 
                         <section id="athlete-result-table">
-                           
+
 
                            <table id="athlete-table">
                               <thead>
@@ -66,57 +68,58 @@
                               <tbody>
                   
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/235827">37th Early Bird Open (HS Open 5K)</a>
                                     </td>
-                                    <td>21:03.4</td>
-                                    <td>12 </td>
-                                     <td>Well, you didn’t set a world record, but you definitely set a team snack record!</td>
+                                    <td data-label="Time">21:03.4</td>
+                                    <td data-label="Place">12 </td>
+                                    <td data-label="Comments">Well, you didn’t set a world record, but you definitely set a team snack record!</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236875">Bret Clements Bath Invitational (Class 1)</a>
                                     </td>
-                                    <td>20:55.2</td>
-                                    <td>33 </td>
-                                     <td></td>
+                                    <td data-label="Time">20:55.2</td>
+                                    <td data-label="Place">33 </td>
+                                    <td data-label="Comments"></td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/238311">SEC Jamboree #1 (Varsity)</a>
                                     </td>
-                                    <td></td>
-                                    <td>-- </td>
-                                     <td>Way to stay focused during the race! Keep that mindset for the next one.</td>
+                                    <td data-label="Time"></td>
+                                    <td data-label="Place">-- </td>
+                                    <td data-label="Comments">Way to stay focused during the race! Keep that mindset for the next one.</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236072">56th Holly-Duane Raffin Festival of Races (D1 Girls)</a>
                                     </td>
-                                    <td>21:47.4</td>
-                                    <td>41 </td>
-                                     <td>You really pushed hard in that final mile, awesome finish!</td>
+                                    <td data-label="Time">21:47.4</td>
+                                    <td data-label="Place">41 </td>
+                                    <td data-label="Comments">You really pushed hard in that final mile, awesome finish!</td>
                                  </tr>
       
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="https://www.athletic.net/CrossCountry/meet/236877">Jackson Invitational (Orange Division (1000 + enrolment))</a>
                                     </td>
-                                    <td>20:46.2PR</td>
-                                    <td>94 </td>
-                                     <td>Great effort out there! Keep pushing yourself at the next meet.</td>
+                                    <td data-label="Time">20:46.2PR</td>
+                                    <td data-label="Place">94 </td>
+                                    <td data-label="Comments">Great effort out there! Keep pushing yourself at the next meet.</td>
                                  </tr>
       
                               </tbody>
 
                         </table>
                      </section>
+                     </details>
                      <section id = "gallery">
                      <h2>Gallery</h2>
-                      </section>
+                     </section>
                      </main>
                      <footer>
                      <p>
@@ -126,7 +129,7 @@
                      Ann Arbor, MI 48103<br><br>
 
                      <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
+                     Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
 
 
                      </footer>

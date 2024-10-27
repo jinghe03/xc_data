@@ -71,9 +71,11 @@ def gen_athlete_page(data, outfile):
       <div class="header-container">
          <!--Athlete would input headshot-->
          <h1>{data["name"]}</h1>
-         <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+         <img class="fade-in" src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
       </div>
    </header>
+
+
    <main id = "main">
       <section id= "athlete-sr-table">
          <h2>Athlete's Seasonal Records (SR) per Year</h2>

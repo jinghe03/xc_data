@@ -1,3 +1,18 @@
+:root {
+    --primary-color: #001d39;
+    --secondary-color: #f4f4f4;
+    --hover-background: rgba(255, 255, 255, 0.2);
+    --text-color: #003366;
+    --dark-background: #503d3b;
+    --light-background: #135c2a;
+    --header-background: #2c3e50;
+    --table-border-color: #ddd;
+}
+
+
+
+
+
 /* Skip style */
 .skip {
     position: absolute;
@@ -18,39 +33,40 @@
 
 /* Navigation styles */
 nav {
-    background-color: #001d39; /* Dark blue background */
-    padding: 5px 1px; /* Padding around the nav */
-    border-radius: 5px; /* Slightly rounded corners */
-    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    padding: 2vw 1vw;
+    border-radius: 5px;
+    margin-bottom: 2vw;
 }
 
-/* Unordered list styles */
 nav ul {
-    list-style: none; /* Remove default list styling */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: center; /* Center the items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* List item styles */
 nav li {
-    margin: 0 8px; /* Space between the items */
+    margin: 0 2vw;
 }
 
-/* Link styles */
 nav a {
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline */
-    font-size: 4vw; /* Font size */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 4vw;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover effect for links */
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
-    border-radius: 5px; /* Rounded corners on hover */
+    background-color: var(--hover-background);
+    border-radius: 5px;
+    transform: translateY(-2px); /* Hover lift effect */
 }
+
 
 
 
@@ -58,16 +74,16 @@ nav a:hover {
 
 /* Header container style for name and picture */
 .header-container {
-    display: flex;           /* Enables Flexbox */
+    display: flex;
     flex-direction: column;  /* Arranges children in a column */
     align-items: center;     /* Centers children horizontally */
-    justify-content: center;  /* Centers children vertically if there's extra space */
+    justify-content: center;
     margin: 0 auto;         /* Centers the container */
     width: 80vw; /* Container takes up 80% of the viewport width */
     text-align: center;      /* Centers text within the container */
     padding: 20px;               /* Adds padding around the container */
-    background-color: #f9f9f9;   /* Light background for contrast */
-    border: 3px solid #e0e0e0;   /* Soft border */
+    background-color: var(--secondary-color);   /* Light background for contrast */
+    border: 3px solid var(--table-border-color);   /* Soft border */
     border-radius: 15px;         /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -75,7 +91,7 @@ nav a:hover {
 header h1 {
     font-size: 8vw;
     text-align: center; /* Center horizontally */
-    color: #003366;
+    color: var(--text-color);
 }
 
 header img {
@@ -84,7 +100,7 @@ header img {
     border-radius: 50%;     /* Circular image */
     object-fit: cover;  /* Maintain aspect ratio */
     margin: 0;
-    border: 3px solid #001d39;
+    border: 3px solid var(--primary-color);;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25); /* Shadow for depth */
 }
 
@@ -103,7 +119,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: var(--secondary-color);
 }
 
 
@@ -137,28 +153,37 @@ body {
 #athlete-table td {
     display: block; /* Make rows and cells behave like blocks */
     width: 100%; /* Full width for each block */
-    border: 1px solid #ddd; /* Add border for clarity */
-    padding: 10px; /* Padding for cells */
+    border: 1px solid var(--table-border-color); /* Add border for clarity */
+    padding: 10px; /* Padding for cells */ 
     box-sizing: border-box; /* Ensure padding is included in width */
     margin-bottom: 5px; /* Space between "cards" */
-    background-color: #001d39; /* Dark blue background */
+    background-color: var(--primary-color); /* Dark blue background */
+    border-radius: 8px; /* Rounded corners */
 }
 
 #athlete-table tbody tr {
-    margin-bottom: 20px; /* Space between rows as "cards" */
+    margin-bottom: 50px; /* Space between rows as "cards" */
 }
 
 #athlete-table tbody td {
-    background-color: #f1fbff; /* Light blue background for each cell */
+    background-color: var(--secondary-color);; /* White background for each cell */
     border-radius: 5px; /* Rounded corners */
-    position: relative; /* For pseudo-element positioning if needed */
+    position: relative; /* For pseudo-element positioning */
+}
+
+#athlete-table tbody tr:nth-child(odd) {
+    background-color: var(--dark-background); ; 
+}
+
+#athlete-table tbody tr:nth-child(even) {
+    background-color: var(--light-background);;
 }
 
 #athlete-table tbody td::before {
-    content: attr(data-label); /* Use data-label for mobile layout */
-    font-weight: bold; /* Bold label */
-    display: block; /* Display label as block */
-    margin-bottom: 5px; /* Space below the label */
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
 
@@ -190,7 +215,7 @@ table {
 th, td {
     padding: 12px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--table-border-color);
 }
 
 th {
@@ -198,24 +223,21 @@ th {
 }
 
 tbody tr:hover {
-    background-color: #f0f5fc; /* Light blue on hover */
+    background-color: var(--hover-background);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* Alternate row color */
+    background-color: var(--secondary-color);
 }
 
 tbody td {
     color: var(--text-color);
 }
 
-/* Sticky Header for Scrolling */
 thead th {
-    position: sticky;
-    top: 0;
-    background-color: #2c3e50;
-    z-index: 1;
+    background-color: var(--header-background);
 }
+
 
 
 
@@ -223,7 +245,7 @@ thead th {
 
 /* Collapsible styling for race results */
 details {
-    border: 1px solid #ccc;
+    border: 1px solid var(--table-border-color);
     border-radius: 5px;
     margin-bottom: 1em;
     padding: 0.5em;
@@ -241,7 +263,7 @@ summary::-webkit-details-marker {
 
 /* Customize the summary for better appearance */
 summary::before {
-    content: '▶'; /* Custom arrow */
+    content: '▶';
     display: inline-block;
     margin-right: 0.5em;
     transition: transform 0.2s ease; /* Animation for arrow */
@@ -251,7 +273,28 @@ summary[open]::before {
     transform: rotate(90deg); /* Rotate arrow when open */
 }
 
-/* Accessibility styles */
+
+
+
+
+/* Progress bar styles */
+.progress {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 80%;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+
+
+/* Link styles */
 a {
     color: #0066cc;
     text-decoration: none;
@@ -261,32 +304,10 @@ a:hover {
     text-decoration: underline;
 }
 
-.progress {
-    width: 100%;
-    background-color: #f3f3f3;
-    border-radius: 5px;
-}
-
-.progress-bar {
-    height: 20px;
-    width: 70%; /* Example width */
-    background-color: #4caf50;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-}
-
-.sticky-header {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-}
 
 
 
-
-
+/* Link transition styles */
 a {
     transition: background-color 0.3s;
 }
@@ -295,31 +316,31 @@ a:active, a:focus {
     background-color: #555; /* Touch effect */
 }
 
-.icon {
-    font-family: 'FontAwesome'; 
-    margin-right: 5px;
-}
 
-:root {
-    --background-color: #f4f4f4;
-    --text-color: #333;
-}
 
-[data-theme='dark'] {
-    --background-color: #333;
-    --text-color: #f4f4f4;
-}
 
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
 
-.animated {
-    animation: fadeIn 0.5s ease-in-out;
+/* Animation style */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards; 
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        animation: none; /* Disable animation */
+        opacity: 1; /* Make the image fully visible */
+    }
+}
+
+

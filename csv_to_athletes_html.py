@@ -1,4 +1,5 @@
 import csv
+import os
 
 def process_athlete_data(file_path):
 
@@ -6,7 +7,7 @@ def process_athlete_data(file_path):
    records = []
 
    # Extracting athlete races
-   races = []           
+   races = []
 
    athlete_name = ""
    athlete_id = ""
@@ -38,39 +39,40 @@ def process_athlete_data(file_path):
       "season_records": records,
       "race_results": races,
       "comments": comments
-   }    
+   }
 
 def gen_athlete_page(data, outfile):
-   # template 
+   # template
    # Start building the HTML structure
    html_content = f'''<!DOCTYPE html>
    <html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Get your own FontAwesome ID -->
-       <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
+      <!-- Get your own FontAwesome ID -->
+      <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
 
-      <link rel = "stylesheet" href = "css/reset.css">
-      <link rel = "stylesheet" href = "css/style.css">
-      
+      <link rel = "stylesheet" href = "../css/style.css">
+      <link rel = "stylesheet" href = "../css/style.css">
 
       <title>{data["name"]}</title>
    </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
    <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="mens.html">Men's Team</a></li>
-        <li><a href="womens.html">Women's Team</a></li>
-     </ul>
+      <ul>
+         <li><a href="../index.html">Home Page</a></li>
+         <li><a href="mens.html">Men's Team</a></li>
+         <li><a href="womens.html">Women's Team</a></li>
+      </ul>
    </nav>
    <header>
-      <!--Athlete would input headshot-->
-       <h1>{data["name"]}</h1>
-      <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+      <div class="header-container">
+         <!--Athlete would input headshot-->
+         <h1>{data["name"]}</h1>
+         <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+      </div>
    </header>
    <main id = "main">
       <section id= "athlete-sr-table">
@@ -84,25 +86,26 @@ def gen_athlete_page(data, outfile):
                   </thead>
                   <tbody>
                   '''
-   
+
    for sr in data["season_records"]:
       sr_row = f'''
                      <tr>
                         <td>{sr["year"]}</td>
                         <td>{sr["sr"]}</td>
-                     </tr>                  
+                     </tr>
                '''
       html_content += sr_row
 
-   html_content += '''                   
+   html_content += '''
                 </tbody>
                   </table>
                      </section>
 
-                        <h2>Race Results</h2>
+                     <details>
+                        <summary>Race Results</summary>
 
                         <section id="athlete-result-table">
-                           
+
 
                            <table id="athlete-table">
                               <thead>
@@ -121,12 +124,12 @@ def gen_athlete_page(data, outfile):
    for race in data["race_results"]:
       race_row = f'''
                                  <tr class="result-row">
-                                    <td>
+                                    <td data-label="Race">
                                        <a href="{race["url"]}">{race["meet"]}</a>
                                     </td>
-                                    <td>{race["time"]}</td>
-                                    <td>{race["finish"]}</td>
-                                     <td>{race["comments"]}</td>
+                                    <td data-label="Time">{race["time"]}</td>
+                                    <td data-label="Place">{race["finish"]}</td>
+                                    <td data-label="Comments">{race["comments"]}</td>
                                  </tr>
       '''
       html_content += race_row
@@ -136,9 +139,10 @@ def gen_athlete_page(data, outfile):
 
                         </table>
                      </section>
+                     </details>
                      <section id = "gallery">
                      <h2>Gallery</h2>
-                      </section>
+                     </section>
                      </main>
                      <footer>
                      <p>
@@ -148,7 +152,7 @@ def gen_athlete_page(data, outfile):
                      Ann Arbor, MI 48103<br><br>
 
                      <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
+                     Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
 
 
                      </footer>
@@ -211,4 +215,4 @@ def main():
       # gen_athlete_page(athlete_data2, "enshu_kuan.html")
 
 if __name__ == '__main__':
-    main()
+   main()

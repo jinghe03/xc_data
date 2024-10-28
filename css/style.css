@@ -80,6 +80,12 @@ nav a {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+nav ul li a.active {
+    font-weight: bold;
+    color: var(--link-color); /* Change color for the active link */
+    border-bottom: 2px solid var(--link-color); /* Underline for active link */
+}
+
 nav a:hover {
     background-color: var(--hover-background);
     border-radius: 5px;
@@ -192,11 +198,11 @@ body {
 }
 
 #athlete-table tbody tr:nth-child(odd) {
-    background-color: var(--dark-background); ; 
+    background-color: var(--dark-background); 
 }
 
 #athlete-table tbody tr:nth-child(even) {
-    background-color: var(--light-background);;
+    background-color: var(--light-background);
 }
 
 #athlete-table tbody td::before {

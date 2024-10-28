@@ -1,14 +1,31 @@
 :root {
-    --primary-color: #001d39;
-    --secondary-color: #f4f4f4;
+    --primary-color: #ffffff; /* White */
+    --secondary-color: #001120; /* Dark navy blue */
     --hover-background: rgba(255, 255, 255, 0.2);
-    --text-color: #003366;
-    --dark-background: #503d3b;
-    --light-background: #135c2a;
-    --header-background: #2c3e50;
-    --table-border-color: #ddd;
+    --text-color: #003366; /* Darker blue */
+    --dark-background: #3b4a3b; /* Darker shade for better contrast */
+    --light-background: #A8B58A; /* Slightly darker for improved contrast */
+    --header-background: #f0f0f0; /* Lighter gray for better readability */
+    --table-border-color: #aaa; /* Darker gray for clearer borders */
+    --link-color: #0056b3;
+    --hover-color: #004299;
 }
 
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #00182e;
+        --secondary-color: #ffffff;
+        --hover-background: rgba(0, 0, 0, 0.3);
+        --text-color: #eeeeee;
+        --dark-background: #353434;
+        --light-background: #515151;
+        --header-background: #424141;
+        --table-border-color: #5b5b5b;
+        --link-color: #a6d8ff;
+        --hover-color: #3491e3;
+    }
+}
 
 
 
@@ -31,12 +48,14 @@
 
 
 
+
+
 /* Navigation styles */
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--primary-color);
+    background-color: var(--header-background);
     padding: 2vw 1vw;
     border-radius: 5px;
     margin-bottom: 2vw;
@@ -55,7 +74,7 @@ nav li {
 }
 
 nav a {
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 4vw;
     transition: background-color 0.3s, transform 0.2s;
@@ -82,7 +101,7 @@ nav a:hover {
     width: 80vw; /* Container takes up 80% of the viewport width */
     text-align: center;      /* Centers text within the container */
     padding: 20px;               /* Adds padding around the container */
-    background-color: var(--secondary-color);   /* Light background for contrast */
+    background-color: var(--primary-color);   /* Light background for contrast */
     border: 3px solid var(--table-border-color);   /* Soft border */
     border-radius: 15px;         /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -100,7 +119,7 @@ header img {
     border-radius: 50%;     /* Circular image */
     object-fit: cover;  /* Maintain aspect ratio */
     margin: 0;
-    border: 3px solid var(--primary-color);;
+    border: 3px solid var(--secondary-color);;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25); /* Shadow for depth */
 }
 
@@ -119,7 +138,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color); /* Use color variable */
+    color: var(--text-color); /* Ensure text color adapts */
 }
 
 
@@ -157,7 +177,7 @@ body {
     padding: 10px; /* Padding for cells */ 
     box-sizing: border-box; /* Ensure padding is included in width */
     margin-bottom: 5px; /* Space between "cards" */
-    background-color: var(--primary-color); /* Dark blue background */
+    background-color: var(--secondary-color); /* Dark blue background */
     border-radius: 8px; /* Rounded corners */
 }
 
@@ -166,7 +186,7 @@ body {
 }
 
 #athlete-table tbody td {
-    background-color: var(--secondary-color);; /* White background for each cell */
+    background-color: var(--primary-color); /* White background for each cell */
     border-radius: 5px; /* Rounded corners */
     position: relative; /* For pseudo-element positioning */
 }
@@ -216,10 +236,11 @@ th, td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid var(--table-border-color);
+
 }
 
 th {
-    color: white;
+    color: var(--primary-color);
 }
 
 tbody tr:hover {
@@ -227,7 +248,7 @@ tbody tr:hover {
 }
 
 tbody tr:nth-child(even) {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 tbody td {
@@ -236,6 +257,7 @@ tbody td {
 
 thead th {
     background-color: var(--header-background);
+    color: var(--text-color);
 }
 
 
@@ -249,6 +271,8 @@ details {
     border-radius: 5px;
     margin-bottom: 1em;
     padding: 0.5em;
+    background-color: var(--header-background);
+    color: var(--text-color); /* Text color variable */
 }
 
 summary {
@@ -296,11 +320,12 @@ summary[open]::before {
 
 /* Link styles */
 a {
-    color: #0066cc;
-    text-decoration: none;
+    color: var(--link-color);
+    text-decoration: underline;
 }
 
 a:hover {
+    color: var(--hoover-color);
     text-decoration: underline;
 }
 

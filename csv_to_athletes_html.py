@@ -138,10 +138,9 @@ def gen_athlete_page(data, outfile):
 
    html_content += '''
                               </tbody>
-
-                        </table>
+                           </table>
+                        </details>
                      </section>
-                     </details>
                      <section id = "gallery">
                      <h2>Gallery</h2>
                      </section>

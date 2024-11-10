@@ -11,7 +11,7 @@
     --link-color-active: #014a00;
     --hover-color: #004299;
     --menu-text-color: #001120;
-    --menu-background: rgba(193, 191, 191, 0.828);
+    --menu-background: #f1efefb4;
 }
 
 /* Dark mode variables */
@@ -100,7 +100,6 @@
 .menu-button {
     position: absolute;
     left: 0vw;
-    /* font-size: 5vw; */
     border: none;
     cursor: pointer;
 }
@@ -140,7 +139,6 @@
 .side-menu li a {
     /* Side menu text color */
     color: var(--menu-text-color);
-
     text-decoration: none;
     display: block;
     font-size: .9rem;  /* side menu item size */
@@ -155,7 +153,7 @@
 
 /* Style the button */
 #menu-toggle {
-    background-color: var(--menu-background);
+    background-color: var(--light-background);
     color: var(--menu-text-color);
     border: none;
     padding: 10px 20px;

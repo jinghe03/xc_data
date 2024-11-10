@@ -545,3 +545,53 @@ a:active, a:focus {
 }
 }
 
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+    /* Nav adjustment */
+    nav a {
+        text-decoration: none;
+        font-size: 3vw; /* Reduced from 4vw to 3vw */
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    /* Header adjustment */
+    header h1 {
+        font-size: 3rem; /* Increase font size for readability */
+    }
+
+    /* Banner adjustment */
+    .banner {
+        height: 6vw; /* Reduced from 10vw to 6vw */
+    }
+
+    main {
+        margin-top: 10vh; /* Distance between main and banner */
+    }
+
+    /* Header container styling */
+    .header-container {
+        width: 70vw; /* Slightly narrower for better tablet layout */
+        padding: 15px; /* Less padding */
+    }
+
+    /* Adjust menu button size for tablet view */
+    #menu-toggle {
+        font-size: .9rem;
+        left: 1vw;
+    }
+
+    /* Adjust side menu for tablet view */
+    .side-menu {
+        width: 20vw; /* Reduced */
+    }
+
+    .side-menu:not(.hidden) {
+    left: 20vw;  /* Reduced */
+}
+}
+

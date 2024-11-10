@@ -520,8 +520,8 @@ a:active, a:focus {
         height: 6vw; /* Reduced from 10vw to 6vw */
     }
 
-    main {
-        margin-top: 60px; /* Slightly increase space below banner */
+    main#main {
+        margin-top: 5vh; /* Distance between main and banner */
     }
 
     /* Header container styling */

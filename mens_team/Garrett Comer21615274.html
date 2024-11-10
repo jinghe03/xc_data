@@ -9,28 +9,46 @@
 
       <link rel = "stylesheet" href = "../css/reset.css">
       <link rel = "stylesheet" href = "../css/style.css">
+      <link rel="stylesheet" href="../dist/css/lightbox.css"/>
+
 
       <title>Garrett Comer</title>
    </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
-   <nav>
+
+   <a href = "#main" class="skip-link">Skip to Main Content</a>
+
+   <!-- Fixed Header with Banner -->
+   <header class="banner" aria-label="Main banner">
+      <!-- Expandable Menu Button -->
+      <button id="menu-toggle" class="menu-button" aria-label="Toggle menu">☰ Menu</button>
+
+      <h1>Profile</h1>
+   </header>
+
+   <nav id="side-menu" class="side-menu hidden">
       <ul>
          <li><a href="../index.html">Home Page</a></li>
          <li><a href="../mens.html">Men's Team</a></li>
          <li><a href="../womens.html">Women's Team</a></li>
       </ul>
    </nav>
-   <header>
-      <div class="header-container">
-         <!--Athlete would input headshot-->
-         <h1>Garrett Comer</h1>
-         <img class="fade-in" src="../images/profiles/21615274.jpg" alt="Athlete headshot" width="200"> 
-      </div>
-   </header>
+
+
 
 
    <main id = "main">
+   <div class="header-container">
+         <!--Athlete would input headshot-->
+         <h1>Garrett Comer</h1>
+
+         <!-- Lightbox link wrapping the headshot -->
+         <a href="../images/profiles/21615274.jpg" data-lightbox="profile" data-title="Garrett Comer">
+         <img class="fade-in" src="../images/profiles/21615274.jpg" alt="Athlete headshot" width="200">
+         </a>
+
+      </div>
+
       <section id= "athlete-sr-table">
          <h2>Athlete's Seasonal Records (SR) per Year</h2>
             <table>
@@ -52,7 +70,7 @@
                         <td>21:04.2</td>
                      </tr>
                
-                </tbody>
+               </tbody>
                   </table>
                      </section>
 
@@ -184,6 +202,11 @@
 
                      </p>
                      </footer>
+
+                     <!-- Link to the JavaScript file -->
+                     <script src="../js/script.js"></script>
+                     <script src="../dist/js/lightbox-plus-jquery.js"></script>
+
                </body>
          </html>
    

@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
+    <!-- Fixed Header with Banner -->
+    <header class="banner">
+        <!-- Expandable Menu Button -->
+        <button id="menu-toggle" class="menu-button">☰ Menu</button>
+
+        <h1>Men's Team</h1>
+    </header>
+
+    <nav id="side-menu" class="side-menu hidden">
         <ul>
             <li><a href="../index.html">Home Page</a></li>
             <li><a href="../mens.html" class="active">Men's Team</a></li>
@@ -16,13 +24,9 @@
         </ul>
     </nav>
 
-    <header>
-        <h1>Men Athlete Profiles</h1>
-    </header>
-
     <main>
         <section id="mens-team">
-            <h2>Men's Team</h2>
+            <h2>Men Athlete Profiles</h2>
             <ul>
                 <!-- Links to individual athlete profiles in the Men's Team folder -->
                 <li><a href="mens_team/Paxton Rose23349712.html">Paxton Rose (Athlete 1)</a></li>
@@ -75,5 +79,9 @@
     <footer>
         <p>&copy; 2024 Athlete Profiles</p>
     </footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="js/script.js"></script>
+
 </body>
 </html>

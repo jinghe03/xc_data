@@ -1,14 +1,17 @@
 :root {
     --primary-color: #ffffff; /* White */
     --secondary-color: #001120; /* Dark navy blue */
-    --hover-background: rgba(255, 255, 255, 0.2);
+    --hover-background: rgba(0, 0, 0, 0.698);
     --text-color: #003366; /* Darker blue */
     --dark-background: #3b4a3b; /* Darker shade for better contrast */
-    --light-background: #A8B58A; /* Slightly darker for improved contrast */
+    --light-background: #bbc99a; /* Slightly darker for improved contrast */
     --header-background: #f0f0f0; /* Lighter gray for better readability */
     --table-border-color: #aaa; /* Darker gray for clearer borders */
-    --link-color: #0056b3;
+    --link-color: #005fc5;
+    --link-color-active: #014a00;
     --hover-color: #004299;
+    --menu-text-color: #001120;
+    --menu-background: rgba(193, 191, 191, 0.828);
 }
 
 /* Dark mode variables */
@@ -16,74 +19,210 @@
     :root {
         --primary-color: #00182e;
         --secondary-color: #ffffff;
-        --hover-background: rgba(0, 0, 0, 0.3);
+        --hover-background: rgba(123, 78, 78, 0.3);
         --text-color: #eeeeee;
-        --dark-background: #353434;
+        --dark-background: #7a7a7a;
         --light-background: #515151;
         --header-background: #424141;
         --table-border-color: #5b5b5b;
         --link-color: #a6d8ff;
+        --link-color-active: #cfe9fe;
         --hover-color: #3491e3;
+        --menu-text-color: #ffffff;
+        --menu-background: rgba(75, 75, 75, 0.689);
     }
 }
 
 
 
 
+
 /* Skip style */
-.skip {
+.skip-link {
+    position: absolute;           /* Position it off-screen initially */
+    top: -100000px;
+    left: 10px;                   /* Adjust as necessary to align with your layout */
+    background-color: var(--light-background);    /* Background color for visibility */
+    color: var(--secondary-color);                 /* Text color */
+    padding: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 5px;           /* Rounded corners */
+    transition: top 0.3s ease;    /* Smooth transition for entry */
+}
+
+/* Make the skip link visible when focused */
+.skip-link:focus {
+    top: 5vh;                    /* Moves the skip link down into view */
+    outline: none;
+}
+
+
+
+
+/* Fixed banner */
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 11vw;
+    background: var(--light-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.banner h1 {
+    font-size: 5vw;
+    text-align: center; /* Center horizontally */
+    color: var(--text-color);
+}
+
+
+
+
+
+/* Centered logo NEED TO ADD IN */
+/* .logo {
+    text-align: center;
+    font-weight: bold;
+} */
+
+
+
+
+
+
+/* Expandable menu */
+.menu-button {
     position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+    left: 0vw;
+    /* font-size: 5vw; */
+    border: none;
+    cursor: pointer;
 }
 
-.skip:focus {
-    position: static;
-    width: auto;
-    height: auto;
+.hidden {
+    display: none;
+}
+
+/* Side menu styling */
+.side-menu {
+    position: fixed;
+    top: 5vw; /* Below the banner */
+    left: 0;
+    width: 70vw;
+    background: var(--menu-background);
+    list-style-type: none;
+    padding: 10px 0;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Hide menu by default */
+    z-index: 5;
+}
+
+.side-menu.show {
+    transform: translateX(0); /* Slide in menu */
+}
+
+/* When hidden class is removed, bring menu on-screen */
+.side-menu:not(.hidden) {
+    left: 70vw; /* Move it into view */
+}
+
+/* Menu item styles */
+.side-menu li {
+    padding: 10px 20px;
+}
+
+.side-menu li a {
+    /* Side menu text color */
+    color: var(--menu-text-color);
+
+    text-decoration: none;
+    display: block;
+    font-size: .9rem;  /* side menu item size */
+}
+
+.side-menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 
 
 
+/* Style the button */
+#menu-toggle {
+    background-color: var(--menu-background);
+    color: var(--menu-text-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: .5rem;
+}
 
 /* Navigation styles */
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     background-color: var(--header-background);
     padding: 2vw 1vw;
     border-radius: 5px;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
 }
 
-nav ul {
+/* Hide the nav items by default */
+#nav-items {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* Show items when the nav is expanded */
+#nav-items.show {
+    display: block;
+}
+
+/* Style the links */
+#nav-items li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+#nav-items li a:hover {
+    background-color: #555;
+}
+
+/* nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-}
+} */
 
 nav li {
     margin: 0 2vw;
 }
 
 nav a {
-    color: var(--text-color);
+    color: var(--menu-text-color);
     text-decoration: none;
-    font-size: 4vw;
+    /* font-size: 4vw; */
     transition: background-color 0.3s, transform 0.2s;
 }
 
 nav ul li a.active {
     font-weight: bold;
-    color: var(--link-color); /* Change color for the active link */
+    color: var(--link-color-active); /* Change color for the active link */
     border-bottom: 2px solid var(--link-color); /* Underline for active link */
+    display: inline-block; /* Underline to text width */
 }
 
 nav a:hover {
@@ -91,7 +230,6 @@ nav a:hover {
     border-radius: 5px;
     transform: translateY(-2px); /* Hover lift effect */
 }
-
 
 
 
@@ -111,15 +249,13 @@ nav a:hover {
     border: 3px solid var(--table-border-color);   /* Soft border */
     border-radius: 15px;         /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-size: 1rem;
+
+    /* Add space between header and content */
+    margin-top: 10vw; /* This should match the height of your fixed banner */
 }
 
-header h1 {
-    font-size: 8vw;
-    text-align: center; /* Center horizontally */
-    color: var(--text-color);
-}
-
-header img {
+.header-container img {
     width: 50vw;
     height: 50vw;
     border-radius: 50%;     /* Circular image */
@@ -146,6 +282,11 @@ body {
     padding: 20px;
     background-color: var(--primary-color); /* Use color variable */
     color: var(--text-color); /* Ensure text color adapts */
+}
+
+/* Additional styling for sections */
+section h2 {
+    font-size: 1.25rem;
 }
 
 
@@ -299,7 +440,7 @@ summary::before {
     transition: transform 0.2s ease; /* Animation for arrow */
 }
 
-summary[open]::before {
+details[open] summary::before {
     transform: rotate(90deg); /* Rotate arrow when open */
 }
 
@@ -313,7 +454,7 @@ a {
 }
 
 a:hover {
-    color: var(--hoover-color);
+    color: var(--hover-color);
     text-decoration: underline;
 }
 
@@ -336,7 +477,7 @@ a:active, a:focus {
 /* Animation style */
 .fade-in {
     opacity: 0;
-    animation: fadeIn 2s forwards; 
+    animation: fadeIn 2s forwards;
 }
 
 @keyframes fadeIn {
@@ -356,4 +497,51 @@ a:active, a:focus {
     }
 }
 
+
+
+
+
+@media screen and (min-width: 768px) {
+
+    /* Nav adjustment */
+    nav a {
+        text-decoration: none;
+        font-size: 3vw; /* Reduced from 4vw to 3vw */
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    /* Header adjustment */
+    header h1 {
+        font-size: 1.5rem; /* Increase font size for readability */
+    }
+
+    /* Banner adjustment */
+    .banner {
+        height: 6vw; /* Reduced from 10vw to 6vw */
+    }
+
+    main {
+        margin-top: 60px; /* Slightly increase space below banner */
+    }
+
+    /* Header container styling */
+    .header-container {
+        width: 70vw; /* Slightly narrower for better tablet layout */
+        padding: 15px; /* Less padding */
+    }
+
+    /* Adjust menu button size for tablet view */
+    #menu-toggle {
+        font-size: .9rem;
+    }
+
+    /* Adjust side menu for tablet view */
+    .side-menu {
+        width: 40vw; /* Reduced */
+    }
+
+    .side-menu:not(.hidden) {
+    left: 40vw;  /* Reduced */
+}
+}
 

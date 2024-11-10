@@ -11,7 +11,7 @@
     --link-color-active: #014a00;
     --hover-color: #004299;
     --menu-text-color: #001120;
-    --menu-background: #f1efefb4;
+    --menu-background: #ecececf3;
 }
 
 /* Dark mode variables */
@@ -29,7 +29,7 @@
         --link-color-active: #cfe9fe;
         --hover-color: #3491e3;
         --menu-text-color: #ffffff;
-        --menu-background: rgba(75, 75, 75, 0.689);
+        --menu-background: rgba(44, 44, 44, 0.933);
     }
 }
 

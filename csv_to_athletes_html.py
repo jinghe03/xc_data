@@ -42,6 +42,16 @@ def process_athlete_data(file_path):
    }
 
 def gen_athlete_page(data, outfile):
+   # Define default image path
+   default_image = "../images/default_image.jpg"
+   athlete_image_path = f"images/profiles/{data['athlete_id']}.jpg"
+
+   # Check if the athlete's image exists
+   if not os.path.exists(athlete_image_path):
+      athlete_image_path = default_image  # Use the default image if not found
+   else:
+      athlete_image_path = f"../images/profiles/{data['athlete_id']}.jpg"
+
    # template
    # Start building the HTML structure
    html_content = f'''<!DOCTYPE html>
@@ -55,28 +65,46 @@ def gen_athlete_page(data, outfile):
 
       <link rel = "stylesheet" href = "../css/reset.css">
       <link rel = "stylesheet" href = "../css/style.css">
+      <link rel="stylesheet" href="../dist/css/lightbox.css"/>
+
 
       <title>{data["name"]}</title>
    </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
-   <nav>
+
+   <a href = "#main" class="skip-link">Skip to Main Content</a>
+
+   <!-- Fixed Header with Banner -->
+   <header class="banner" aria-label="Main banner">
+      <!-- Expandable Menu Button -->
+      <button id="menu-toggle" class="menu-button" aria-label="Toggle menu">☰ Menu</button>
+
+      <h1>Profile</h1>
+   </header>
+
+   <nav id="side-menu" class="side-menu hidden">
       <ul>
          <li><a href="../index.html">Home Page</a></li>
          <li><a href="../mens.html">Men's Team</a></li>
          <li><a href="../womens.html">Women's Team</a></li>
       </ul>
    </nav>
-   <header>
-      <div class="header-container">
-         <!--Athlete would input headshot-->
-         <h1>{data["name"]}</h1>
-         <img class="fade-in" src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
-      </div>
-   </header>
+
+
 
 
    <main id = "main">
+   <div class="header-container">
+         <!--Athlete would input headshot-->
+         <h1>{data["name"]}</h1>
+
+         <!-- Lightbox link wrapping the headshot -->
+         <a href="../images/profiles/{data["athlete_id"]}.jpg" data-lightbox="profile" data-title="{data['name']}">
+         <img class="fade-in" src="{athlete_image_path}" alt="Athlete headshot" width="200">
+         </a>
+
+      </div>
+
       <section id= "athlete-sr-table">
          <h2>Athlete's Seasonal Records (SR) per Year</h2>
             <table>
@@ -99,7 +127,7 @@ def gen_athlete_page(data, outfile):
       html_content += sr_row
 
    html_content += '''
-                </tbody>
+               </tbody>
                   </table>
                      </section>
 
@@ -157,6 +185,11 @@ def gen_athlete_page(data, outfile):
 
                      </p>
                      </footer>
+
+                     <!-- Link to the JavaScript file -->
+                     <script src="../js/script.js"></script>
+                     <script src="../dist/js/lightbox-plus-jquery.js"></script>
+
                </body>
          </html>
    '''

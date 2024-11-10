@@ -8,30 +8,38 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Athlete Profiles</h1>
-        <nav>
-            <ul>
-                <!-- Navigation links-->
-                <li><a href="#main" class="active">Home Page</a></li>
-                <li><a href="#mens-team" >Men's Team</a></li>
-                <li><a href="#womens-team">Women's Team</a></li>
-            </ul>
-        </nav>
+    <!-- Fixed Header with Banner -->
+    <header class="banner">
+        <!-- Expandable Menu Button -->
+        <button id="menu-toggle" class="menu-button">☰ Menu</button>
+
+        <!-- Centered Logo -->
+        <div class="logo">
+            <h1>Athlete Profiles</h1>
+        </div>
     </header>
+
+    <!-- Side Navigation Menu (Hidden by default) -->
+    <nav id="side-menu" class="side-menu hidden">
+        <ul>
+            <li><a href="#main" class="active">Home Page</a></li>
+            <li><a href="mens.html">Men's Team</a></li>
+            <li><a href="womens.html">Women's Team</a></li>
+        </ul>
+    </nav>
 
     <main id = "main">
         <section id="mens-team">
             <h2>Men's Team</h2>
             <ul>
-                <li><a href="mens.html">View Men's Team Profiles</a></li>
+                <li><a href="mens.html">Men's Team Profiles</a></li>
             </ul>
         </section>
 
         <section id="womens-team">
             <h2>Women's Team</h2>
             <ul>
-                <li><a href="womens.html">View Women's Team Profiles</a></li>
+                <li><a href="womens.html">Women's Team Profiles</a></li>
             </ul>
         </section>
 
@@ -40,5 +48,8 @@
     <footer>
         <p>&copy; 2024 Athlete Profiles</p>
     </footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="js/script.js"></script>
 </body>
 </html>

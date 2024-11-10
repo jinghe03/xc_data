@@ -520,7 +520,7 @@ a:active, a:focus {
         height: 6vw; /* Reduced from 10vw to 6vw */
     }
 
-    main#main {
+    main {
         margin-top: 5vh; /* Distance between main and banner */
     }
 

@@ -207,8 +207,7 @@ body.lb-disable-scrolling {
 
 
 
-
-/* Adding in reduced motion preference for lightbox */
+/* Adding in reduced motion preference for lightbox, though it seems like animation is done in JS files that is overriding CSS */
 @media (prefers-reduced-motion: reduce) {
   /* Lightbox overlay and container adjustments */
   .lightboxOverlay,
@@ -240,3 +239,12 @@ body.lb-disable-scrolling {
       opacity: 1; /* Ensure full visibility without transition */
   }
 }
+
+
+
+
+
+
+
+
+

@@ -98,7 +98,7 @@ def gen_athlete_page(data, outfile):
 
          <!-- Lightbox link wrapping the headshot -->
          <a href="../images/profiles/{data["athlete_id"]}.jpg" data-lightbox="profile" data-title="{data['name']}">
-         <img class="fade-in" src=""../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200">
+         <img class="fade-in" src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200">
          </a>
 
       </div>

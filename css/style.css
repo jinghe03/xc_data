@@ -491,18 +491,6 @@ a:active, a:focus {
 
 
 
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    .fade-in {
-        animation: none; /* Disable animation */
-        opacity: 1; /* Make the image fully visible */
-    }
-}
-
-
-
-
-
 @media screen and (min-width: 768px) {
 
    /* Header adjustment */
@@ -535,11 +523,11 @@ a:active, a:focus {
 
     /* Menu item styles */
     .side-menu li {
-    padding: 10px 0;
+    padding: 10px 0; /* Increase padding for better visibility */
     }
 
     .side-menu li a {
-        font-size: 1.5rem;  /* side menu item size */
+        font-size: 1.5rem;  /* Increase side menu text size for larger screen */
     }
 
     .side-menu:not(.hidden) {
@@ -547,9 +535,72 @@ a:active, a:focus {
     }
 
     main {
-        margin-top: 10vh;
+        margin-top: 15vh;
     }
 }
+
+
+
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations for transitions, like hover effects or fade-ins */
+    .skip-link {
+        transition: none; /* Disable the transition for skip link */
+    }
+
+    .banner h1 {
+        font-size: 5vw; /* Disable scale effect on banner text */
+        transform: none; /* Disable transform */
+    }
+
+    .header-container {
+        transform: none; /* Disable hover scale effect */
+    }
+
+    .header-container:hover {
+        transform: none; /* Disable hover effect */
+    }
+
+    .fade-in {
+        animation: none;  /* Remove the animation */
+        opacity: 1;       /* Ensure the image is fully visible */
+    }
+
+    nav a {
+        transition: none; /* Disable transition effects for links */
+    }
+
+    nav a:hover {
+        transform: none; /* Disable hover lift effect */
+        background-color: transparent; /* Remove hover background color change */
+    }
+
+    #athlete-table tbody td::before {
+        content: none; /* Disable content change for table cells on mobile */
+    }
+
+    /* Disable any other animations, transitions, or hover effects as needed */
+    /* Example: Disable sliding menu effect */
+    .side-menu {
+        transition: none;
+    }
+
+    .side-menu.show {
+        transform: none; /* Prevent sliding in/out effect */
+    }
+
+    /* Disable any other transitions */
+    details summary::before {
+        transition: none; /* Disable the arrow animation */
+    }
+
+    /* Disable any scrolling or animation for tables */
+    .table-wrapper {
+        overflow-x: scroll; /* Keep horizontal scroll but disable animation */
+    }
+}
+
 
 
 

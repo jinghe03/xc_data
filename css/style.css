@@ -487,6 +487,19 @@ a:active, a:focus {
     }
 }
 
+
+
+
+/* Icon styling */
+i.fa-brands {
+    color: var(--secondary-color); /* Instagram's brand color */
+    font-size: 1.5em; /* Make the icon bigger */
+}
+
+
+
+
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     .fade-in {

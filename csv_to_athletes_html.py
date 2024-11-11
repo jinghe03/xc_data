@@ -43,14 +43,14 @@ def process_athlete_data(file_path):
 
 def gen_athlete_page(data, outfile):
    # Define default image path
-   default_image = "../images/default_image.jpg"
-   athlete_image_path = f"images/profiles/{data['athlete_id']}.jpg"
+   # default_image = "../images/default_image.jpg"
+   # athlete_image_path = f"images/profiles/{data['athlete_id']}.jpg"
 
-   # Check if the athlete's image exists
-   if not os.path.exists(athlete_image_path):
-      athlete_image_path = default_image  # Use the default image if not found
-   else:
-      athlete_image_path = f"../images/profiles/{data['athlete_id']}.jpg"
+   # # Check if the athlete's image exists
+   # if not os.path.exists(athlete_image_path):
+   #    athlete_image_path = default_image  # Use the default image if not found
+   # else:
+   #    athlete_image_path = f"../images/profiles/{data['athlete_id']}.jpg"
 
    # template
    # Start building the HTML structure
@@ -98,7 +98,7 @@ def gen_athlete_page(data, outfile):
 
          <!-- Lightbox link wrapping the headshot -->
          <a href="../images/profiles/{data["athlete_id"]}.jpg" data-lightbox="profile" data-title="{data['name']}">
-         <img class="fade-in" src="{athlete_image_path}" alt="Athlete headshot" width="200">
+         <img class="fade-in" src=""../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200">
          </a>
 
       </div>
@@ -187,6 +187,22 @@ def gen_athlete_page(data, outfile):
                      <!-- Link to the JavaScript file -->
                      <script src="../js/script.js"></script>
                      <script src="../dist/js/lightbox-plus-jquery.js"></script>
+                     Yes
+                     <script>
+                     document.addEventListener("DOMContentLoaded", function() {
+                        document.querySelectorAll('img').forEach(img => {
+                           img.onerror = function() {
+                                 this.onerror = null; // Prevents infinite loop if default image also fails
+                                 this.src = '../images/default_image.jpg'; // Path to default image
+                                 this.alt = ""; // Alt text for the default image
+                                 const link = this.closest('a');
+                                 if (link) {
+                                    link.href = '../images/default_image.jpg';
+                                 }
+                           };
+                        });
+                     });
+</script>
                </body>
          </html>
    '''

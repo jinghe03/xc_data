@@ -41,7 +41,7 @@
 .skip-link {
     position: absolute;           /* Position it off-screen initially */
     top: -100000px;
-    left: 10px;                   /* Adjust as necessary to align with your layout */
+    right: 10px;
     background-color: var(--light-background);    /* Background color for visibility */
     color: var(--secondary-color);                 /* Text color */
     padding: 10px;
@@ -54,7 +54,7 @@
 
 /* Make the skip link visible when focused */
 .skip-link:focus {
-    top: 5vh;                    /* Moves the skip link down into view */
+    top: 20px;                    /* Moves the skip link down into view */
     outline: none;
 }
 
@@ -116,7 +116,7 @@ a:focus {
 
 /* Side menu styling */
 .side-menu {
-    position: absolute;
+    position: fixed;
     top: 50px; /* Below the banner */
     left: 0;
     width: 70vw;

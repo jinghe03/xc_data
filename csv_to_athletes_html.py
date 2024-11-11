@@ -201,7 +201,7 @@ def gen_athlete_page(data, outfile):
                            };
                         });
                      });
-</script>
+                  </script>
                </body>
          </html>
    '''

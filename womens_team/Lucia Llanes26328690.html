@@ -42,7 +42,7 @@
 
          <!-- Lightbox link wrapping the headshot -->
          <a href="../images/profiles/26328690.jpg" data-lightbox="profile" data-title="Lucia Llanes">
-         <img class="fade-in" src="../images/profiles/26328690.jpg" alt="Athlete headshot" width="200">
+         <img class="fade-in" src=""../images/profiles/26328690.jpg" alt="Athlete headshot" width="200">
          </a>
 
       </div>
@@ -136,6 +136,22 @@
                      <!-- Link to the JavaScript file -->
                      <script src="../js/script.js"></script>
                      <script src="../dist/js/lightbox-plus-jquery.js"></script>
+                     Yes
+                     <script>
+                     document.addEventListener("DOMContentLoaded", function() {
+                        document.querySelectorAll('img').forEach(img => {
+                           img.onerror = function() {
+                                 this.onerror = null; // Prevents infinite loop if default image also fails
+                                 this.src = '../images/default_image.jpg'; // Path to default image
+                                 this.alt = ""; // Alt text for the default image
+                                 const link = this.closest('a');
+                                 if (link) {
+                                    link.href = '../images/default_image.jpg';
+                                 }
+                           };
+                        });
+                     });
+</script>
                </body>
          </html>
    

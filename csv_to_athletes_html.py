@@ -187,7 +187,6 @@ def gen_athlete_page(data, outfile):
                      <!-- Link to the JavaScript file -->
                      <script src="../js/script.js"></script>
                      <script src="../dist/js/lightbox-plus-jquery.js"></script>
-
                </body>
          </html>
    '''

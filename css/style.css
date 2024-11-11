@@ -67,7 +67,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 11vw;
+    height: 50px;
     background: var(--light-background);
     display: flex;
     align-items: center;
@@ -104,14 +104,20 @@
     cursor: pointer;
 }
 
+button:focus,
+.menu-button:focus,
+a:focus {
+    outline: 2px solid var(--link-color);
+}
+
 .hidden {
     display: none;
 }
 
 /* Side menu styling */
 .side-menu {
-    position: fixed;
-    top: 5vw; /* Below the banner */
+    position: absolute;
+    top: 50px; /* Below the banner */
     left: 0;
     width: 70vw;
     background: var(--menu-background);
@@ -133,7 +139,7 @@
 
 /* Menu item styles */
 .side-menu li {
-    padding: 10px 20px;
+    padding: 1px 20px;
 }
 
 .side-menu li a {
@@ -148,17 +154,14 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-
-
-
 /* Style the button */
 #menu-toggle {
     background-color: var(--light-background);
     color: var(--menu-text-color);
     border: none;
-    padding: 10px 20px;
+    padding: 10px 0;
     cursor: pointer;
-    font-size: .5rem;
+    font-size: 1rem;
 }
 
 /* Navigation styles */
@@ -169,7 +172,7 @@ nav {
     background-color: var(--header-background);
     padding: 2vw 1vw;
     border-radius: 5px;
-    margin-bottom: 3vw;
+    margin-bottom: 5px;
 }
 
 /* Hide the nav items by default */
@@ -197,13 +200,6 @@ nav {
     background-color: #555;
 }
 
-/* nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-} */
 
 nav li {
     margin: 0 2vw;
@@ -280,6 +276,10 @@ body {
     padding: 20px;
     background-color: var(--primary-color); /* Use color variable */
     color: var(--text-color); /* Ensure text color adapts */
+}
+
+main {
+    margin-top: 10vh; /* Distance between main and banner */
 }
 
 /* Additional styling for sections */
@@ -490,15 +490,6 @@ a:active, a:focus {
 
 
 
-/* Icon styling */
-i.fa-brands {
-    color: var(--secondary-color); /* Instagram's brand color */
-    font-size: 1.5em; /* Make the icon bigger */
-}
-
-
-
-
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -514,95 +505,55 @@ i.fa-brands {
 
 @media screen and (min-width: 768px) {
 
-    /* Nav adjustment */
-    nav a {
-        text-decoration: none;
-        font-size: 3vw; /* Reduced from 4vw to 3vw */
-        transition: background-color 0.3s, transform 0.2s;
-    }
-
-    /* Header adjustment */
+   /* Header adjustment */
     header h1 {
         font-size: 1.5rem; /* Increase font size for readability */
     }
 
     /* Banner adjustment */
     .banner {
-        height: 6vw; /* Reduced from 10vw to 6vw */
-    }
-
-    main {
-        margin-top: 5vh; /* Distance between main and banner */
+        height: 100px; /* Increase banner for readability */
     }
 
     /* Header container styling */
     .header-container {
-        width: 70vw; /* Slightly narrower for better tablet layout */
+        width: 90vw; /* Slightly wider for better tablet layout */
         padding: 15px; /* Less padding */
     }
 
     /* Adjust menu button size for tablet view */
     #menu-toggle {
-        font-size: .9rem;
-    }
-
-    /* Adjust side menu for tablet view */
-    .side-menu {
-        width: 40vw; /* Reduced */
-    }
-
-    .side-menu:not(.hidden) {
-    left: 40vw;  /* Reduced */
-}
-}
-
-
-
-
-
-
-@media screen and (min-width: 1024px) {
-
-    /* Nav adjustment */
-    nav a {
-        text-decoration: none;
-        font-size: 3vw; /* Reduced from 4vw to 3vw */
-        transition: background-color 0.3s, transform 0.2s;
-    }
-
-    /* Header adjustment */
-    header h1 {
-        font-size: 3rem; /* Increase font size for readability */
-    }
-
-    /* Banner adjustment */
-    .banner {
-        height: 6vw; /* Reduced from 10vw to 6vw */
-    }
-
-    main {
-        margin-top: 10vh; /* Distance between main and banner */
-    }
-
-    /* Header container styling */
-    .header-container {
-        width: 70vw; /* Slightly narrower for better tablet layout */
-        padding: 15px; /* Less padding */
-    }
-
-    /* Adjust menu button size for tablet view */
-    #menu-toggle {
-        font-size: .9rem;
+        font-size: 1.5rem;
         left: 1vw;
     }
 
     /* Adjust side menu for tablet view */
     .side-menu {
-        width: 20vw; /* Reduced */
+        width: 60vw;
+        padding-top: 50px;
+    }
+
+    /* Menu item styles */
+    .side-menu li {
+    padding: 10px 0;
+    }
+
+    .side-menu li a {
+        font-size: 1.5rem;  /* side menu item size */
     }
 
     .side-menu:not(.hidden) {
-    left: 20vw;  /* Reduced */
+    left: 60vw;
+    }
+
+    main {
+        margin-top: 10vh;
+    }
 }
-}
+
+
+
+
+
+
 
